@@ -12,21 +12,36 @@ http.listen(4002, function() {
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 
-app.get('/', function(req, res) {
+
+var c2i_1='';
+var c2i_2='';
+var camera= new cv.VideoCapture('rtsp://admin:admin@140.113.179.14:8088/channel1');
+cam2img();
+
+app.get('/NCTUstream', function(req, res) {
   //console.log(req.body.imarray);
   //console.log(req.body.imtype);
-  var im=cv.Matrix.fromArray(req.body.imarray,16);
   //console.log(test);
-  im.detectObject('./node_modules/opencv/data/haarcascade_frontalface_alt2.xml', {}, function(err, faces) {
+  c2i_2.detectObject('./node_modules/opencv/data/haarcascade_frontalface_alt2.xml', {}, function(err, faces) {
     if (err) throw err;
     for (var i = 0; i < faces.length; i++) {
       if (err) throw err;
       face = faces[i];
-      im.rectangle([face.x, face.y], [face.width, face.height], [0, 255, 0], 2, function(err){
+      c2i_2.rectangle([face.x, face.y], [face.width, face.height], [0, 255, 0], 2, function(err){
         if (err) throw err;
       });
     }
-    var returnData=im.toBuffer(".jpg").toString("base64")
+    var returnData=c2i_2.toBuffer(".jpg").toString("base64")
     res.send(returnData);
   });
 });
+
+function cam2img() {
+  camera.read(function(err, im) {
+    if (err) throw err;
+        c2i_1=im;
+        c2i_2=c2i_1;
+        cam2img();
+  });
+
+}
