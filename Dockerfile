@@ -21,8 +21,6 @@ RUN sudo apt update
 
 RUN apt-get install -y tzdata && apt install -y libopencv-dev
 
-RUN sudo npm install forever -g
-
 RUN sudo npm install 
 
 CMD [ "node", "/home/work/zmec-stream-host-server-v1/server.js" ]
