@@ -17,6 +17,8 @@ WORKDIR /home/work/zmec-stream-host-server-v1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN sudo apt update
+
 RUN apt-get install -y tzdata && apt-get install -y libopencv-dev
 
 RUN sudo npm install forever -g
