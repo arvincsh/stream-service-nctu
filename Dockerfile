@@ -11,9 +11,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
 RUN apt-get install -y nodejs
 
-RUN git clone https://github.com/arvincsh/zmec-stream-host-nctu.git
+RUN git clone https://github.com/arvincsh/zmec-stream-host.git
 
-WORKDIR /home/work/zmec-stream-host-nctu
+WORKDIR /home/work/zmec-stream-host
 
 ENV DEBIAN_FRONTEND=noninteractive
 
