@@ -1,5 +1,5 @@
 {
-  "name": "zmec-stream-host-nctu",
+  "name": "zmec-stream-host",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
