@@ -23,4 +23,6 @@ RUN apt-get install -y tzdata && apt install -y libopencv-dev
 
 RUN sudo npm install 
 
-CMD [ "node", "/home/work/zmec-stream-host-nctu/server.js" ]
+RUN sudo npm install forever -g 
+
+CMD [ "forever", "server.js" ]
