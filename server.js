@@ -18,7 +18,7 @@ var c2i_2='';
 var camera= new cv.VideoCapture('http://admin:admin@192.168.173.181:8085/channel1');
 cam2img();
 
-app.get('/NCTUstream', function(req, res) {
+app.get('/stream', function(req, res) {
   //console.log(req.body.imarray);
   //console.log(req.body.imtype);
   //console.log(test);
