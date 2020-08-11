@@ -22,3 +22,5 @@ RUN apt-get install -y tzdata && apt-get install -y libopencv-dev
 RUN sudo npm install 
 
 RUN sudo npm install forever -g 
+
+CMD ['forever','server.js']
