@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 var c2i_1='';
 var c2i_2='';
 var camera= new cv.VideoCapture('http://admin:admin@140.113.179.14:8085/channel1');
-//cam2img();
+cam2img();
 
 app.get('/NCTUstream', function(req, res) {
   //console.log(req.body.imarray);
