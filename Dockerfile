@@ -23,4 +23,4 @@ RUN sudo npm install
 
 RUN sudo npm install forever -g 
 
-CMD ['forever','server.js']
+RUN sudo npm install opencv
